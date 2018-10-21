@@ -1,6 +1,6 @@
-# Formus
+# gui-form
 
-React form generation using simple components.
+Gui's React form generation using simple components.
 
 ## Why?
 
