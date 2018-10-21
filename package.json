@@ -1,14 +1,14 @@
 {
-  "name": "formus",
+  "name": "gui-form",
   "version": "1.0.0",
   "description": "React Form Creator",
-  "main": "src/formus.ts",
+  "main": "src/gui-form.ts",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gvanderest/formus.git"
+    "url": "git+https://github.com/gvanderest/gui-form.git"
   },
   "keywords": [
     "react",
@@ -22,11 +22,19 @@
   "author": "Guillaume VanderEst <gvanderest@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gvanderest/formus/issues"
+    "url": "https://github.com/gvanderest/gui-form/issues"
   },
-  "homepage": "https://github.com/gvanderest/formus#readme",
+  "homepage": "https://github.com/gvanderest/gui-form#readme",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "@types/enzyme": "^3.1.14",
+    "@types/enzyme-adapter-react-16": "^1.0.3",
+    "@types/jest": "^23.3.5",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.4",
+    "typescript": "^3.1.3"
   },
   "dependencies": {
     "@types/react": "^16.4.18",

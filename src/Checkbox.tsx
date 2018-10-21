@@ -1,22 +1,41 @@
 import React from "react";
 import FormContext from "./FormContext";
 
-export class Checkbox extends React.Component<ICheckboxProps> {
+interface IProps {
+    name: string;
+    onChange?(value: string | null): void;
+    value?: string;
+}
+
+/**
+ * Parse the name to figure out the name portion, and if it's an Array type.
+ * @param name the field name, either "power" or "powers[]"
+ * @returns [parsedName, nameIsArray]
+ */
+function parseName(name: string): [string, boolean] {
+    if (name.endsWith("[]")) {
+        return [name.replace("[]", ""), true];
+    }
+    return [name, false];
+}
+
+export class Checkbox extends React.Component<IProps> {
     public render() {
-        const { name, value, onChange, ...rest } = this.props;
-        const value = this.props.value || true;
+        const { onChange, ...rest } = this.props;
+        const [name, isArray] = parseName(this.props.name);
+        const value = this.props.value || "";
         return (
             <FormContext.Consumer>
-                {(context) => {
-                    const { formState } = context;
-                    const checked = formState[name] === value;
+                { (context) => {
+                    const { data } = context;
+                    const checked = data[name] === value;
                     return (
                         <div>
                             <input
                                 {...rest}
                                 type="checkbox"
-                                name={name}
-                                value={formState[name] || ""}
+                                name={ name }
+                                value={ data[name] || ""}
                                 checked={checked}
                                 onChange={(e) => {
                                     const { checked } = e.target;
@@ -24,13 +43,13 @@ export class Checkbox extends React.Component<ICheckboxProps> {
                                         [name]: checked ? value : null,
                                     });
                                     if (onChange) {
-                                        onChange(checked ? value : null);
+                                        onChange((checked && value) ? value : null);
                                     }
                                 }}
                             />
                         </div>
                     );
-                }}
+                } }
             </FormContext.Consumer>
         );
     }
