@@ -1,0 +1,37 @@
+{
+  "name": "formus",
+  "version": "1.0.0",
+  "description": "React Form Creator",
+  "main": "src/formus.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvanderest/formus.git"
+  },
+  "keywords": [
+    "react",
+    "perform",
+    "form",
+    "maker",
+    "forms",
+    "generator",
+    "typescript"
+  ],
+  "author": "Guillaume VanderEst <gvanderest@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gvanderest/formus/issues"
+  },
+  "homepage": "https://github.com/gvanderest/formus#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}
